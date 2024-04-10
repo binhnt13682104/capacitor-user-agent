@@ -32,7 +32,7 @@ public class UserAgentPlugin extends Plugin {
         String newUA = call.getString("userAgent", null);
         String ua = settings.getUserAgentString();
         if (!Objects.equals(newUA, ua)) {
-          settings.setUserAgentString(ua);
+          settings.setUserAgentString(newUA);
           if (Boolean.TRUE.equals(call.getBoolean("reloadOnChange", false))) {
             bridge.getWebView().reload();
           }
