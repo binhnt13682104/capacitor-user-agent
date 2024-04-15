@@ -28,7 +28,7 @@ public class UserAgentPlugin: CAPPlugin {
              }
             if self.bridge?.webView?.customUserAgent != userAgent {
                 self.bridge?.webView?.customUserAgent = userAgent
-                let reloadOnChange = call.getString("reloadOnChange") ?? false
+                let reloadOnChange = call.getBool("reloadOnChange") ?? false
                 if reloadOnChange {
                     self.bridge?.webView?.reload()
                 }
